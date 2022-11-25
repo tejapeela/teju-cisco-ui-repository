@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: teju-app-ui
+  name: teju-app-ui
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: teju-app-ui
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: teju-app-ui
+    spec:
+      containers:
+      - image: tpeela/teju:appv1
+        name: teju
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
